@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <center>
+        <h1>Libros</h1>
+    </center>
+    <a href="{% url 'createLibro' %}"><button class="btn btn-success">Nuevo Libro</button></a> {% for item in lista %}
+    <h1>{{item.saga}}</h1>
+    <a href="{% url 'libroDetalle' item.pk %}">
+        <h2>{{item.nombreLibro}}</h2>
+    </a>
+    <img src="{% static item.imagenLibro %}" alt=""> {% endfor %}
+</div>
+{% endblock content %}

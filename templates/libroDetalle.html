@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div>
+    <h1>{{lista.saga}}</h1>
+    <h2>{{lista.nombreLibro}}</h2>
+    <img src="{% static lista.imagenLibro %}" alt="Imagen del autor">
+    <a href="{% url 'updateLibro' lista.pk %}"><button class="btn btn-warning">Editar libro</button></a>
+    <a href="{% url 'deleteLibro' lista.pk %}"><button class="btn btn-danger">Eliminar libro</button></a>
+</div>
+{% endblock content %}

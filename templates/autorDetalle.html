@@ -5,7 +5,7 @@
     <ul>
         <p>Saga favorita:</p>
         <li>
-            {{lista.saga}}
+            <a href="{% url 'libros' %}">{{lista.saga}}</a>
         </li>
     </ul>
     <a href="{% url 'updateAutor' lista.pk %}"><button class="btn btn-warning">Editar autor</button></a>

@@ -30,6 +30,11 @@ class autorDeleteView(DeleteView):
     context_object_name = 'lista'
     success_url = reverse_lazy('home')
 
+class libroListView(ListView):
+    model = PostLibro
+    template_name = 'libros.html'
+    context_object_name = 'lista'
+
 class libroDetailView(DetailView):
     model = PostLibro
     template_name = 'libroDetalle.html'
