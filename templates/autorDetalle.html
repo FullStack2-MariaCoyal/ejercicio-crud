@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div>
+    <h1>{{lista.nombreAutor}}</h1>
+    <img src="{% static lista.imagenAutor %}" alt="Imagen del autor">
+    <ul>
+        <p>Saga favorita:</p>
+        <li>
+            {{lista.saga}}
+        </li>
+    </ul>
+</div>
+{% endblock content %}
