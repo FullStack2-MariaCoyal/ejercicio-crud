@@ -17,3 +17,8 @@ class autorCreateView(CreateView):
     model = PostAutor
     template_name = 'createAutor.html'
     fields = '__all__'
+
+class autorUpdateView(UpdateView):
+    model = PostAutor
+    template_name = 'updateAutor.html'
+    fields = '__all__'
