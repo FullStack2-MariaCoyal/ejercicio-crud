@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import PostAutor
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 # Create your views here.
 
 class homeListView(ListView):
@@ -22,3 +23,9 @@ class autorUpdateView(UpdateView):
     model = PostAutor
     template_name = 'updateAutor.html'
     fields = '__all__'
+
+class autorDeleteView(DeleteView):
+    model = PostAutor
+    template_name = 'deleteAutor.html'
+    context_object_name = 'lista'
+    success_url = reverse_lazy('home')

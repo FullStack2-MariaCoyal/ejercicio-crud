@@ -8,6 +8,7 @@
             {{lista.saga}}
         </li>
     </ul>
-    <a href="{% url 'updateAutor' lista.pk %}">Editar autor</a>
+    <a href="{% url 'updateAutor' lista.pk %}"><button class="btn btn-warning">Editar autor</button></a>
+    <a href="{% url 'deleteAutor' lista.pk %}"><button class="btn btn-danger">Eliminar Autor</button></a>
 </div>
 {% endblock content %}

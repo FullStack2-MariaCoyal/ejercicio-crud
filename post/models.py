@@ -3,11 +3,14 @@ from django.urls import reverse
 # Create your models here.
 
 class PostAutor(models.Model):
-    nombreAutor = models.CharField(max_length=255, default="")
-    saga = models.CharField(max_length=255, default="")
+    nombreAutor = models.CharField(max_length=255, default='')
+    saga = models.CharField(max_length=255, default='')
+    descripcion = models.TextField(default='', blank=True, null=True)
     imagenAutor = models.ImageField(upload_to='static/img/autores')
     def __str__(self):
         return self.saga
+    def get_absolute_url(self):
+        return reverse('autorDetalle', args=[str(self.pk)])
 
 class PostLibro(models.Model):
     saga = models.ForeignKey(PostAutor, on_delete=models.CASCADE)
@@ -17,4 +20,4 @@ class PostLibro(models.Model):
         return self.nombreLibro
     
     def get_absolute_url(self):
-        return reverse('libroDetalle', args=[str(self.pk)])
+        return reverse('autorDetalle', args=[str(self.pk)])
