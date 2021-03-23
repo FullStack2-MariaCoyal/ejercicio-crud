@@ -2,8 +2,10 @@
 <div class="container">
     <center>
         <h1>Autores</h1>
+        <br>
+        <a href="{% url 'createAutor' %}"><button class="btn btn-success">Nuevo Autor</button></a>
     </center>
-    <a href="{% url 'createAutor' %}"><button class="btn btn-success">Nuevo Autor</button></a> {% for item in lista %}
+    {% for item in lista %}
     <a href="{% url 'autorDetalle' item.pk %}">
         <h2>{{item.nombreAutor}}</h2>
     </a>

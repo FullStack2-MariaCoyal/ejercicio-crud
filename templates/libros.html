@@ -2,8 +2,10 @@
 <div class="container">
     <center>
         <h1>Libros</h1>
+        <br>
+        <a href="{% url 'createLibro' %}"><button class="btn btn-success">Nuevo Libro</button></a>
     </center>
-    <a href="{% url 'createLibro' %}"><button class="btn btn-success">Nuevo Libro</button></a> {% for item in lista %}
+    {% for item in lista %}
     <h1>{{item.saga}}</h1>
     <a href="{% url 'libroDetalle' item.pk %}">
         <h2>{{item.nombreLibro}}</h2>

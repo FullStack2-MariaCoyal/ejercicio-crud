@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import homeListView, autorDetailView, autorCreateView, autorUpdateView, autorDeleteView, libroListView, libroCreateView, libroDetailView, libroUpdateView, libroDeleteView
 urlpatterns = [
+    #Rutas para libros
     path('libros/<int:pk>/delete', libroDeleteView.as_view(), name='deleteLibro'),
     path('libros/<int:pk>/update', libroUpdateView.as_view(), name='updateLibro'),
     path('libros/create', libroCreateView.as_view(), name='createLibro'),
