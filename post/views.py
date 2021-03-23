@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PostAutor
+from .models import PostAutor, PostLibro
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 # Create your views here.
@@ -27,5 +27,26 @@ class autorUpdateView(UpdateView):
 class autorDeleteView(DeleteView):
     model = PostAutor
     template_name = 'deleteAutor.html'
+    context_object_name = 'lista'
+    success_url = reverse_lazy('home')
+
+class libroDetailView(DetailView):
+    model = PostLibro
+    template_name = 'libroDetalle.html'
+    context_object_name = 'lista'
+
+class libroCreateView(CreateView): 
+    model = PostLibro
+    template_name = 'createLibro.html'
+    fields = '__all__'
+
+class libroUpdateView(UpdateView):
+    model = PostLibro
+    template_name = 'updateLibro.html'
+    fields = '__all__'
+
+class libroDeleteView(DeleteView):
+    model = PostLibro
+    template_name = 'deleteLibro.html'
     context_object_name = 'lista'
     success_url = reverse_lazy('home')

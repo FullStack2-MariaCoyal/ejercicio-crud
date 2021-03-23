@@ -9,6 +9,7 @@ class PostAutor(models.Model):
     imagenAutor = models.ImageField(upload_to='static/img/autores')
     def __str__(self):
         return self.saga
+        
     def get_absolute_url(self):
         return reverse('autorDetalle', args=[str(self.pk)])
 
